@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 from areaCircle import area_circle
 from areaTriangle import area_triangle
 
-app = Flask(__name__, static_url_path = '', static_folder = 'c:\Flask_Intro\static')
+app = Flask(__name__, static_url_path = '', static_folder = 'C:\Flask_Intro\My-Profile\static')
 
 @app.route('/')
 def index():
@@ -20,8 +20,24 @@ def circle():
 def triangle():
     return render_template('areaOfTriangle.html')
 
-@app.route('/works', methods=['GET', 'POST'])
+@app.route('/program')
+def program():
+    return render_template('program.html')
+
+@app.route('/motto')
+def motto():
+    return render_template('motto.html')
+
+@app.route('/section')
+def section():
+    return render_template('section.html')
+
+@app.route('/works')
 def works():
+    return render_template('works.html')
+
+@app.route('/touppercase', methods=['GET', 'POST'])
+def touppercase():
     result = None
     if request.method == 'POST':
         input_string = request.form.get('inputString', '')
@@ -50,9 +66,20 @@ def areaTriangle():
         area = str(s)
     return render_template('areaOfTriangle.html', area=area)
 
+
+@app.route('/uppercase', methods=['GET', 'POST'])
+def uppercase():
+        result = None
+        if request.method == 'POST':
+            input_string = request.form['inputString']
+            result = input_string.upper()
+            return render_template('touppercase.html', result=result)
+
+
 @app.route('/contact')
 def contact():
-    return "Contact Page. please create me an html page with dummy contact info"
+    return render_template('contact.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)

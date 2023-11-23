@@ -1,14 +1,21 @@
 body {
-    background-image: url("bg3.jpg");
+    background-image: url("bg4.jpg");
     background-color: #000000;
     background-size: 1400px 800px;
     }
-
+    
 h1{font-size: 300%;
     color: #ffffff;
     font-family: 'Lucida Console';
-    font-style: italic;
-    text-align: center;
+    font-style: bold;
+    text-align: left;
+}
+
+p{font-size: 120%;
+    color: #ffffff;
+    font-family: 'Monaco';
+    font-style: bold;
+    text-align: left;
 }
 
 a:link, a:visited {
@@ -18,19 +25,15 @@ a:link, a:visited {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    position: relative;
-    top: 50px;
     }
     
 a:hover, a:active {
     background-color: #4336f4;
-    position: relative;
-    top: 50px;
     }
 
 
 div.absolute {
     position: absolute;
-    top: 1000px;
+    top: 80px;
     right: 100px;
     }

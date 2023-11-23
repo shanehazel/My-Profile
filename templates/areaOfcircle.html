@@ -2,11 +2,13 @@
 <html>
 <head>
     <title>Area of Circle Calculator</title>
+    <link rel="stylesheet" href="circle.css">
 </head>
 <body>
 <div>
     <h1>Area of Circle Calculator</h1>
 
+    <h2>
     <form action="/calculate_circle" method="post">
 
         <label for="radius">Enter the radius of the circle:</label>
@@ -14,6 +16,7 @@
         <button type="submit">Calculate</button>
 
     </form>
+    </h2>
 
     {% if area %}
     <p> The area is {{ area }}</p>
